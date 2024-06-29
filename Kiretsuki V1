@@ -80,38 +80,42 @@ local CreditsTab = Window:MakeTab({
 	function MeleeStat()
         while MeleeStat == true do
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",1)
+            wait(1)
      end
     end
 
 	function DefenseStat()
         while DefenseStat == true do
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense",1)
+            wait(1)
      end
     end
 
 	function SwordStat()
         while SwordStat == true do
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Sword",1)
+            wait(1)
      end
     end
 
 	function GunStat()
         while MeleeStat == true do
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",1)
+            wait(1)
      end
     end
-    
+
 	function FruitStat()
         while FruitStat == true do
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Demon Fruit",1)
+            wait(1)
      end
     end
 
 
 -- Stats toggle Section
-
 StatsTab:AddToggle({
-	Name = "Melee Stat",
+	Name = "Auto Melee Stat",
 	Default = false,
 	Callback = function(Value)
 		_G.MeleeStat(Value)
@@ -120,7 +124,7 @@ StatsTab:AddToggle({
 })
 
 StatsTab:AddToggle({
-	Name = "Defense Stat",
+	Name = "Auto Defense Stat",
 	Default = false,
 	Callback = function(Value)
 		_G.DefenseStat(Value)
@@ -129,7 +133,7 @@ StatsTab:AddToggle({
 })
 
 StatsTab:AddToggle({
-	Name = "SwordStat",
+	Name = "Auto SwordStat",
 	Default = false,
 	Callback = function(Value)
 		_G.SwordStat(Value)
@@ -138,7 +142,7 @@ StatsTab:AddToggle({
 })
 
 StatsTab:AddToggle({
-	Name = "GunStat",
+	Name = "Auto Gun Stat",
 	Default = false,
 	Callback = function(Value)
 		_G.GunStat(Value)
@@ -147,7 +151,7 @@ StatsTab:AddToggle({
 })
 
 StatsTab:AddToggle({
-	Name = "Devil Fruit",
+	Name = "Auto Devil Fruit Stat",
 	Default = false,
 	Callback = function(Value)
 		_G.FruitStat(Value)
@@ -164,77 +168,77 @@ ShopTab:AddButton({
     Name = "Buy Black Leg",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Electro",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Fishman Karate",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Dragon Claw",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonClaw")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Superhuman",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Death Step",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Sharkman Karate",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Electric Claw",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Dragon Talon",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy Godhuman",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
-      end    
+      end
 })
 
 ShopTab:AddButton({
     Name = "Buy SanguineArt",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
-      end    
+      end
 })
 
 
