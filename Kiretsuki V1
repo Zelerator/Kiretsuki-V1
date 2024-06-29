@@ -78,7 +78,39 @@ local CreditsTab = Window:MakeTab({
 
 -- Stats toggle Section
 StatsTab:AddToggle({
-	Name = "Melee Toggle",
+	Name = "Auto melee Stat",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+StatsTab:AddToggle({
+	Name = "Auto Defense Stat",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+StatsTab:AddToggle({
+	Name = "Auto Sword Stat",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+StatsTab:AddToggle({
+	Name = "Auto Gun Stat",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+StatsTab:AddToggle({
+	Name = "Auto Fruit Stat",
 	Default = false,
 	Callback = function(Value)
 		print(Value)
