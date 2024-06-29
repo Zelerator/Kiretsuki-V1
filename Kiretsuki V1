@@ -73,7 +73,12 @@ local CreditsTab = Window:MakeTab({
 
 
 	-- Functions
-
+function MeleeStat()
+    while _G.MeleeStat == true do
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",1)
+        wait(0.0000000001)
+     end
+end
 
 
 -- Stats toggle Section
@@ -81,7 +86,8 @@ StatsTab:AddToggle({
 	Name = "Auto melee Stat",
 	Default = false,
 	Callback = function(Value)
-		print(Value)
+		_G>MeleeStat = (Value)
+        MeleeStat()
 	end    
 })
 
