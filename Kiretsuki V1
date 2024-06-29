@@ -86,7 +86,7 @@ StatsTab:AddToggle({
 	Name = "Auto melee Stat",
 	Default = false,
 	Callback = function(Value)
-		_G>MeleeStat = (Value)
+		_G.MeleeStat = (Value)
         MeleeStat()
 	end    
 })
