@@ -116,7 +116,27 @@ StatsTab:AddToggle({
 	end    
 })
 
---Toggles Section
+-- Teleport Section
+TeleportTab:AddButton({
+	Name = "Sea 1",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+  	end    
+})
+
+TeleportTab:AddButton({
+	Name = "Sea 1",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+  	end    
+})
+
+TeleportTab:AddButton({
+	Name = "Sea 1",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+  	end    
+})
 
 
 
