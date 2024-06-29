@@ -78,7 +78,7 @@ local CreditsTab = Window:MakeTab({
 
 -- Stats toggle Section
 StatsTab:AddToggle({
-	Name = "This is a toggle!",
+	Name = "Melee Toggle",
 	Default = false,
 	Callback = function(Value)
 		print(Value)
