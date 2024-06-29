@@ -1,154 +1,236 @@
-	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-	local Window = OrionLib:MakeWindow({Name = "Mugen Sect | BloxFruits Script", IntroText = "Mugen Sect | By Zelerator", HidePremium = false, SaveConfig = true, ConfigFolder = "Mugen Sect Folder"})
-	
-	--Values
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Mugen Sect | BloxFruits Script", IntroText = "Mugen Sect | By Zelerator", HidePremium = false, SaveConfig = true, ConfigFolder = "Mugen Sect Folder"})
 
-	--Functions
-	
-	--Tabs Section
-	local FarmTab = Window:MakeTab({
-		Name = "AutoFarm",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+--Values
 
-	local StatsTab = Window:MakeTab({
-		Name = "Stats",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+--Functions
 
-	local TeleportTab = Window:MakeTab({
-		Name = "Teleport",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+--Tabs Section
+local FarmTab = Window:MakeTab({
+    Name = "AutoFarm",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-	local FruitsTab = Window:MakeTab({
-		Name = "Fruits",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
-	
-	local RaceTab = Window:MakeTab({
-		Name = "Race",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+local StatsTab = Window:MakeTab({
+    Name = "Stats",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-	local ShopTab = Window:MakeTab({
-		Name = "Shop",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+local TeleportTab = Window:MakeTab({
+    Name = "Teleport",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-	local SettingTab = Window:MakeTab({
-		Name = "Setting",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+local FruitsTab = Window:MakeTab({
+    Name = "Fruits",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-	local MiscTab = Window:MakeTab({
-		Name = "Misc",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+local RaceTab = Window:MakeTab({
+    Name = "Race",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-	local Sea_EventTab = Window:MakeTab({
-		Name = "Sea Events",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+local ShopTab = Window:MakeTab({
+    Name = "Shop",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-	local CreditsTab = Window:MakeTab({
-		Name = "Credits",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
+local SettingTab = Window:MakeTab({
+    Name = "Setting",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-	--Toggles Section
+local MiscTab = Window:MakeTab({
+    Name = "Misc",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Sea_EventTab = Window:MakeTab({
+    Name = "Sea Events",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local CreditsTab = Window:MakeTab({
+    Name = "Credits",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
 
+	-- _G. stuff 
+	_G.MeleeStat = true
+	_G.DefenseStat = true
+	_G.SwordStat = true
+	_G.GunStat = true
+	_G.FruitStat = true
 
-	-- Shop Buttons Section
 
-	ShopTab:AddButton({
-		Name = "Buy Black Leg",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
-		  end    
-	})
 
-	ShopTab:AddButton({
-		Name = "Buy Electro",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
-		  end    
-	})
+	-- Functions
+	function MeleeStat()
+        while MeleeStat == true do
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",1)
+        end
+	function DefenseStat()
+        while DefenseStat == true do
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense",1)
+        end
+	function SwordStat()
+        while SwordStat == true do
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Sword",1)
+        end
+	function GunStat()
+        while MeleeStat == true do
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",1)
+        end
+	function FruitStat()
+        while FruitStat == true do
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Demon Fruit",1)
+        end
 
-	ShopTab:AddButton({
-		Name = "Buy Fishman Karate",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
-		  end    
-	})
 
-	ShopTab:AddButton({
-		Name = "Buy Dragon Claw",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonClaw")
-		  end    
-	})
+-- Stats toggle Section
 
-	ShopTab:AddButton({
-		Name = "Buy Superhuman",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
-		  end    
-	})
-	
-	ShopTab:AddButton({
-		Name = "Buy Death Step",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
-		  end    
-	})
+StatsTab:AddToggle({
+	Name = "Melee Stat",
+	Default = false,
+	Callback = function(Value)
+		_G.MeleeStat(Value)
+        MeleeStat()
+        end
+})
 
-	ShopTab:AddButton({
-		Name = "Buy Sharkman Karate",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
-		  end    
-	})
+StatsTab:AddToggle({
+	Name = "Defense Stat",
+	Default = false,
+	Callback = function(Value)
+		_G.DefenseStat(Value)
+        DefenseStat()
+        end
+})
 
-	ShopTab:AddButton({
-		Name = "Buy Electric Claw",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-		  end    
-	})
+StatsTab:AddToggle({
+	Name = "SwordStat",
+	Default = false,
+	Callback = function(Value)
+		_G.SwordStat(Value)
+        SwordStat()
+        end
+})
 
-	ShopTab:AddButton({
-		Name = "Buy Dragon Talon",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
-		  end    
-	})
+StatsTab:AddToggle({
+	Name = "GunStat",
+	Default = false,
+	Callback = function(Value)
+		_G.GunStat(Value)
+        GunStat()
+        end
+})
 
-	ShopTab:AddButton({
-		Name = "Buy Godhuman",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
-		  end    
-	})
+StatsTab:AddToggle({
+	Name = "Devil Fruit",
+	Default = false,
+	Callback = function(Value)
+		_G.FruitStat(Value)
+        FruitStat()
+        end
+})
 
-	ShopTab:AddButton({
-		Name = "Buy SanguineArt",
-		Callback = function()
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
-		  end    
-	})
+--Toggles Section
 
-	
-	
-	OrionLib:Init()
+
+
+-- Shop Buttons Section
+ShopTab:AddButton({
+    Name = "Buy Black Leg",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Electro",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Fishman Karate",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Dragon Claw",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonClaw")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Superhuman",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Death Step",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Sharkman Karate",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Electric Claw",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Dragon Talon",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy Godhuman",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
+      end    
+})
+
+ShopTab:AddButton({
+    Name = "Buy SanguineArt",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
+      end    
+})
+
+
+
+
+
+
+OrionLib:Init()
