@@ -118,26 +118,84 @@ StatsTab:AddToggle({
 
 -- Teleport Section
 TeleportTab:AddButton({
-	Name = "Sea 1",
+	Name = "First Sea",
 	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
   	end    
 })
 
 TeleportTab:AddButton({
-	Name = "Sea 1",
+	Name = "Second Sea",
 	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
   	end    
 })
 
 TeleportTab:AddButton({
-	Name = "Sea 1",
+	Name = "Third Sea",
 	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
   	end    
 })
 
+TeleportTab:AddButton({
+    Name = "Teleport to Haunted Castle",
+    Callback = function()
+        local TweenService = game:GetService("TweenService")
+        local Workspace = game:GetService("Workspace")
+        local Players = game:GetService("Players")
+        
+        
+        local targetPosition = Vector3.new(-9515.3720703125, 164.00624084473, 5786.0610351562)
+        
+        
+        local humanoidRootPart = Workspace.Characters.abysrioami.HumanoidRootPart
+        local startPosition = humanoidRootPart.Position
+        
+        
+        local distance = (targetPosition - startPosition).magnitude
+        
+        
+        local speed = 200  
+        local duration = distance / speed
+        
+        
+        local player = Players.LocalPlayer
+        local character = player.Character
+        if not character then
+            character = player.CharacterAdded:Wait()
+        end
+        
+        
+        local camera = Workspace.CurrentCamera
+        camera.CameraType = Enum.CameraType.Scriptable
+        camera.CFrame = CFrame.new(camera.CFrame.Position, humanoidRootPart.Position)
+        
+        
+        local tween = TweenService:Create(
+            humanoidRootPart, 
+            TweenInfo.new(
+                duration,      
+                Enum.EasingStyle.Linear, 
+                Enum.EasingDirection.Out, 
+                0,               
+                false,            
+                0                
+            ),
+            {CFrame = CFrame.new(targetPosition)} 
+        )
+        
+        
+        tween:Play()
+        
+        tween.Completed:Connect(function()
+        
+            print("Tween animation completed!")
+            camera.CameraType = Enum.CameraType.Custom 
+        end)
+        
+      end
+})
 
 
 -- Shop Buttons Section
